@@ -6,7 +6,7 @@
   <title>Cadastro | ReciclaDescarte</title>
   <meta name="description" content="Crie sua conta no ReciclaDescarte e junte-se ao nosso ecossistema de sustentabilidade urbana.">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
 
@@ -18,13 +18,13 @@
   <main>
     <form action="#" method="post">
 
-      <!-- Quem é você? (radio: apenas uma opção possível) -->
+      
       <fieldset>
         <legend>Quem é você?</legend>
 
         <div class="opcoes">
           <p>
-            <!-- ícone de casa (imagem/SVG entra aqui quando houver) -->
+            <img src="imagens/icon-home.svg" alt="Ícone de morador">
             <input type="radio" id="tipo-morador" name="tipo" value="morador" checked>
             <label for="tipo-morador">
               <strong>Morador</strong><br>
@@ -33,7 +33,7 @@
           </p>
 
           <p>
-            <!-- ícone de caminhão (imagem/SVG entra aqui quando houver) -->
+            <img src="imagens/icon-truck.svg" alt="Ícone de empresa de coleta">
             <input type="radio" id="tipo-empresa" name="tipo" value="empresa">
             <label for="tipo-empresa">
               <strong>Empresa de Coleta</strong><br>
@@ -43,13 +43,13 @@
         </div>
       </fieldset>
 
-      <!-- Nome Completo / Razão Social -->
+      
       <p>
         <label for="nome">Nome Completo / Razão Social</label><br>
         <input type="text" id="nome" name="nome" placeholder="Ana Carolina Santos" required>
       </p>
 
-      <!-- E-mail e Telefone -->
+      
       <div class="linha">
         <p>
           <label for="email">E-mail</label><br>
@@ -62,13 +62,13 @@
         </p>
       </div>
 
-      <!-- Endereço Completo -->
+      
       <p>
         <label for="endereco">Endereço Completo</label><br>
         <input type="text" id="endereco" name="endereco" placeholder="Rua dos Pinheiros, 450 - Pinheiros, São Paulo - SP" required>
       </p>
 
-      <!-- Senha e Confirmar Senha -->
+      
       <div class="linha">
         <p>
           <label for="senha">Senha</label><br>
@@ -81,7 +81,7 @@
         </p>
       </div>
 
-      <!-- Aceite dos termos (checkbox já marcado, como na imagem) -->
+      
       <p class="termos">
         <input type="checkbox" id="termos" name="termos" checked required>
         <label for="termos">
