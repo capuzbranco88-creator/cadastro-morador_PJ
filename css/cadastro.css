@@ -1,0 +1,201 @@
+/* ==========================================================
+   CADASTRO — ReciclaDescarte
+   Medidas e cores tiradas do cadastro.pdf / Figma (card 390px)
+   ========================================================== */
+
+/* RESET + TOKENS (cores = "Cores de seleção" do Figma) */
+* { box-sizing: border-box; }
+
+:root {
+    --cor-texto:        #0F172A;  /* títulos e texto digitado */
+    --cor-texto-suave:  #475569;  /* subtítulo, labels, descrições */
+    --cor-placeholder:  #94A3B8;  /* placeholders */
+    --cor-borda:        #E2E8F0;  /* bordas de inputs e cards */
+    --cor-branco:       #FFFFFF;  /* card e inputs */
+    --cor-fundo:        #F8FAFC;  /* fundo da página */
+    --cor-verde-escuro: #15803D;  /* links e opção selecionada */
+    --cor-verde:        #22C55E;  /* botão, checkbox, borda selecionada */
+    --cor-verde-claro:  #DCFCE7;  /* fundo da opção selecionada */
+}
+
+/* TIPOGRAFIA GLOBAL */
+body {
+    margin: 0;
+    padding-bottom: 90px;
+    font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--cor-texto);
+    background: var(--cor-fundo);
+}
+
+/* os <br> do HTML não são mais necessários: os labels agora são block */
+br { display: none; }
+
+/* TOPO (título e subtítulo) */
+.topo {
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 85px 40px 0;
+}
+h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--cor-texto);
+}
+.topo p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    line-height: 1.35;
+    color: var(--cor-texto-suave);
+}
+
+/* CARD
+   margin-top negativo: o título invade o topo do card, igual ao Figma */
+main {
+    max-width: 390px;
+    margin: -110px auto 0;
+    padding: 100px 40px 92px;
+    background: var(--cor-branco);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* LABELS E LEGEND */
+label, legend {
+    display: block;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    color: var(--cor-texto-suave);
+}
+form label { margin-bottom: 6px; }
+
+/* "QUEM É VOCÊ?" */
+fieldset {
+    min-width: 0;
+    margin: 0 0 24px;
+    padding: 0;
+    border: 0;
+}
+
+/* .opcoes: margin-top reserva o espaço dos ícones (casa e caminhão) */
+.opcoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 90px;
+}
+.opcoes p {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+
+/* radio escondido: o label vira o "card" clicável */
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+.opcoes label {
+    margin: 0;
+    padding: 14px 8px 14px 11px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    background: var(--cor-branco);
+    color: var(--cor-texto);
+    font-weight: 400;
+    cursor: pointer;
+}
+.opcoes strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.opcoes small {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 1.3;
+    color: var(--cor-texto-suave);
+}
+
+/* opção selecionada (:checked + label) */
+input[type="radio"]:checked + label {
+    padding: 13px 7px 13px 10px;
+    border: 2px solid var(--cor-verde);
+    background: var(--cor-verde-claro);
+    color: var(--cor-verde-escuro);
+}
+input[type="radio"]:checked + label small {
+    color: var(--cor-verde-escuro);
+}
+/* foco de teclado (o radio está invisível, então o label mostra o foco) */
+input[type="radio"]:focus-visible + label {
+    outline: 2px solid var(--cor-verde);
+    outline-offset: 2px;
+}
+
+/* CAMPOS DE TEXTO */
+form p { margin: 0 0 16px; }
+
+/* e-mail + telefone / senha + confirmar senha lado a lado */
+.linha { display: flex; gap: 16px; }
+.linha p { flex: 1; min-width: 0; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    height: 44px;
+    padding: 0 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    background: var(--cor-branco);
+    font: inherit;
+    font-size: 14px;
+    color: var(--cor-texto);
+}
+input::placeholder { color: var(--cor-placeholder); }
+
+/* ACEITE DOS TERMOS */
+.termos {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 16px 0 16px;
+}
+.termos input {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: var(--cor-verde);
+}
+.termos label {
+    margin: 0;
+    font-weight: 400;
+}
+a {
+    color: var(--cor-verde-escuro);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* BOTÃO */
+button {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    background: var(--cor-verde);
+    color: var(--cor-branco);
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
